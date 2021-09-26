@@ -1,8 +1,12 @@
 // Place all the styles related to the type controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#cahracters {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 10%;
+}
 
 #typed {
-  size: 2rem;
   color: red;
 }
