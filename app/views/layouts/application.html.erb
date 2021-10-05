@@ -10,11 +10,24 @@
   </head>
 
   <body>
+    <% flash.each do|message_type, message| %>
+      <%= message_type %><%= message %>
+    <% end %>
     <header>
       <nav>
         <ul>
-          <li><%= link_to "ログイン", '#'%></li>
-          <li><%= link_to "ログアウト", '#'%></li>
+          <li>
+            <%= link_to "ホーム", root_path %>
+          </li>
+          <% if logged_in?%>
+          <li>
+            <%= link_to "ログアウト", logout_path, method: :delete %>
+          </li>
+          <% else%>
+          <li>
+            <%= link_to "ログイン", login_path %>
+          </li>
+          <% end%>
         </ul>
       </nav>
     </header>
