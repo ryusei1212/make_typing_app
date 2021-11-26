@@ -1,8 +1,14 @@
 <h1 class="main">ホーム画面<h1>
 
 <div class="box">
+<% if logged_in?%>
   <p class="box2"><%= link_to 'ノーマルモード', '#' %></p>
-  <p class="box2"><%= link_to 'フリーモード', type_path %></p>
-  <p class="box2"><%= link_to '新規作成', '#' %></p>
-  <p class="box2"><%= link_to '設定', '#' %></p>
+  <p class="box2"><%= link_to 'フリーモード', titles_path %></p>
+  <p class="box2"><%= link_to '新規作成', new_title_path %></p>
+  <p class="box2"><%= link_to '設定', '#'%>
+ <% else%>
+  <p class="box2"><%= link_to 'ノーマルモード', '#' %></p>
+  <p class="box2"><%= link_to '設定', '#'%>
+ <% end%>
 </div>
+

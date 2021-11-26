@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sentence: MyString
+  tytle_id: 1
+
+two:
+  sentence: MyString
+  tytle_id: 1

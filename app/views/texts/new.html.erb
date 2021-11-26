@@ -1,0 +1,10 @@
+<h1>テキスト作成画面</h1>
+
+  <%= form_with(model: @text, local: true) do |f| %>
+    <%= f.label :sentence, "テキスト" %>
+    <%= f.text_field :sentence %>
+
+    <% f.hidden_field :title_id %>
+
+    <%= f.submit "保存"%>
+  <% end %>
