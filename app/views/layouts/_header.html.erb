@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <ul class="main-nav">
+      <li>
+        <%= link_to "ホーム", root_path %>
+      </li>
+      <% if logged_in?%>
+      <li>
+        <%= link_to "ログアウト", logout_path, method: :delete %>
+      </li>
+      <% else%>
+      <li>
+        <%= link_to "ログイン", login_path %>
+      </li>
+      <% end%>
+    </ul>
+  </nav>
+</header>

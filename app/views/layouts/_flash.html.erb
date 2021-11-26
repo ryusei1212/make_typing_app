@@ -1,0 +1,6 @@
+<%# 「flash[:キー名] = "メッセージ"」の部分の「キー名」をkeyで、「メッセージ」をvalueで取得できます。 %>
+<% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>">
+      <%= value %>
+    </p>
+<% end %>

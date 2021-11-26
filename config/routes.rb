@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home_screen#home'
 
-  get '/type',to: 'type#index'
+  get '/type',to: 'types#index'
 
   resources :users
 
@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  resources :titles
+  resources :texts
   
 end
