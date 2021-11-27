@@ -2,13 +2,12 @@ class TextsController < ApplicationController
 
 
   def new
-    @text = Text.new()
+    @text = Text.new
     @text.title_id = params[:title_id]
   end
 
   def create
     @text = Text.new(text_params)
-
     if @text.save
       flash[:success] = "テキストの保存に成功"
       redirect_to titles_path
