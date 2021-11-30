@@ -21,5 +21,5 @@ end
 private
 
   def text_params
-    params.require(:text).permit(:sentence)
+    params.require(:text).permit(:sentence, :title_id)
   end
