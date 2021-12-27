@@ -1,5 +1,9 @@
 class TitlesController < ApplicationController
 
+  def index
+    @title = Title.all
+  end
+
   def new
     @title = Title.new
   end
@@ -15,10 +19,6 @@ class TitlesController < ApplicationController
       render 'new'
     end
 
-  end
-
-  def index
-    @title = Title.all
   end
 
 end
