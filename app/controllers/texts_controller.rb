@@ -1,6 +1,9 @@
 class TextsController < ApplicationController
 
 
+  def index
+  end
+
   def new
     @text = Text.new
     @text.title_id = params[:title_id]

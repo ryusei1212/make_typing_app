@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'home_screen#home'
 
-  get '/type',to: 'types#index'
+  get '/types', to: 'types#index'
+  get '/types/start', to: 'types#start'
 
   resources :users
 
