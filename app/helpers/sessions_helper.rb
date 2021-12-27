@@ -22,7 +22,7 @@ module SessionsHelper
       end
     end
   end
-
+  # current_userのsession_idがあるかないかで、ログイン済みかを判断している。
   def logged_in?
     !current_user.nil?
   end

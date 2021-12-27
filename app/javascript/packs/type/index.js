@@ -1,14 +1,11 @@
 const typedField = document.getElementById('typed');
 const untypedField = document.getElementById('untyped');
 
-const strs = [
-  'be crowded with',
-  'take a day off',
-  'at work',
-  'look out',
-  'by means of ~',
-  'catch sight of ~'
-];
+const input = document.querySelector('input');
+const value = input.getAttribute('value');
+const jsonValue = JSON.parse(value);
+
+const strs = jsonValue;
 
 
 function randomInt(max) {

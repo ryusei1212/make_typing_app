@@ -15,7 +15,32 @@
 }
 
 .box2 {
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: wheat;
-  box-shadow: 0 0 0 4px #d24444;
+  box-shadow: 0 0 0 4px #0bd;
+}
+
+.box2 a:hover {
+  color: #0bd;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  list-style: none;
+}
+
+.main-nav li {
+  margin-left: 12px;
+}
+
+.main-nav a {
+  color: #432;
+}
+
+.main-nav a:hover {
+  color: #0bd;
 }

@@ -7,6 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+// import .から始めてpathを記述することでjsファイルを読み込む
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
