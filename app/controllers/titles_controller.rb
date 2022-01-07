@@ -18,7 +18,26 @@ class TitlesController < ApplicationController
       flash.now[:danger] = "タイトルを入力してください"
       render 'new'
     end
+  end
 
+  def edit
+    @title = Title.find(params[:id])
+  end
+
+  def update
+    @title = Title.find(params[:id])
+    if @title.update(title_params)
+      redirect_to titles_path
+      flash[:success] = 'タイトルの変更'
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Title.find(params[:id]).destroy
+    flash[:success] = 'タイトル削除'
+    redirect_to titles_path
   end
 
 end
