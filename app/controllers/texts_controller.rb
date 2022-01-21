@@ -10,7 +10,12 @@ class TextsController < ApplicationController
   end
 
   def create
-    @text = Text.new(text_params)
+    text_params[:sentence].each do |sentence|
+      @text = Text.new(sentence: sentence, 
+                       title_id: text_params[:title_id] )
+      @text.save
+    end
+
     if @text.save
       flash[:success] = "テキストの保存に成功"
       redirect_to titles_path
@@ -23,6 +28,12 @@ end
 
 private
 
+  #変更後
   def text_params
-    params.require(:text).permit(:sentence, :title_id)
+    params.require(:text).permit(:title_id, sentence: [])
   end
+
+  # 変更前
+  # def text_params
+  #   params.require(:text).permit(:title_id, :sentence)
+  # end
