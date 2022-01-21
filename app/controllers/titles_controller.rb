@@ -28,7 +28,7 @@ class TitlesController < ApplicationController
     @title = Title.find(params[:id])
     if @title.update(title_params)
       redirect_to titles_path
-      flash[:success] = 'タイトルの変更'
+
     else
       render 'edit'
     end
@@ -36,7 +36,6 @@ class TitlesController < ApplicationController
 
   def destroy
     Title.find(params[:id]).destroy
-    flash[:success] = 'タイトル削除'
     redirect_to titles_path
   end
 

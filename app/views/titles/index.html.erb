@@ -5,7 +5,7 @@
     </li>
   </ul>
   <%= link_to '編集', edit_title_path(title.id) %>
-  <%= link_to '削除', title_path(title.id), method: :delete %>
+  <%= link_to '削除', title_path(title.id), method: :delete,            data:{confirm: "「#{title.title}」を削除しますか？"} %>
 <% end %>
 
 
