@@ -1,10 +1,12 @@
 <h1>テキスト作成画面</h1>
 
-  <%= form_with(model: @text, local: true) do |f| %>
+  <button id="addForm">テキスト追加</button>
+  <%= form_with(model: @text, local: true, id: "parent") do |f| %>
     <%= f.label :sentence, "テキスト" %>
-    <%= f.text_field :sentence %>
+    <%= f.text_field :sentence, name:"text[sentence][]" %>
 
     <%= f.hidden_field :title_id %>
 
     <%= f.submit "保存"%>
   <% end %>
+  <%= javascript_pack_tag 'text_add/text' %>
