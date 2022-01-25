@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_071431) do
+ActiveRecord::Schema.define(version: 2022_01_25_045629) do
 
   create_table "texts", force: :cascade do |t|
     t.string "sentence"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 2021_10_15_071431) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
