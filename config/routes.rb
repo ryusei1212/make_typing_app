@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root 'home_screen#home'
 
   get '/types', to: 'types#index'
-  get '/types/start', to: 'types#start'
 
   resources :users
+
+  resources :account_activations, only: [:edit]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :titles
   resources :texts
+  
   
 end
