@@ -5,10 +5,10 @@ const input = document.querySelector('input');
 const value = input.getAttribute('value');
 const jsonValue = JSON.parse(value);
 
+// 問題文
 const strs = jsonValue;
 
  function eventListener (e) {
-   console.log(e);
   if (e.key !== untyped.substring(0, 1)) { return; }
   typed += untyped.substring(0, 1);
   untyped = untyped.substring(1);

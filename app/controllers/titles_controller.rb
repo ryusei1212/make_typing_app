@@ -21,14 +21,16 @@ class TitlesController < ApplicationController
   end
 
   def edit
-    @title = Title.find(params[:id])
+    @title = Title.includes(:texts).find(params[:id])
   end
 
   def update
     @title = Title.find(params[:id])
-    if @title.update(title_params)
+    if ActiveRecord::Base.transaction do
+      @title.update!(title_params)
+      Text.multi_update(text_params)
+    end
       redirect_to titles_path
-
     else
       render 'edit'
     end
@@ -45,5 +47,9 @@ private
 
   def title_params
     params.require(:title).permit(:title)
+  end
+
+  def text_params
+    params.require(:title).permit(sentence: :sentence)[:sentence]
   end
 

@@ -10,9 +10,9 @@ class TextsController < ApplicationController
   end
 
   def create
-    text_params[:sentence].each do |sentence|
+    multi_text_params[:sentence].each do |sentence|
       @text = Text.new(sentence: sentence, 
-                       title_id: text_params[:title_id] )
+                       title_id: multi_text_params[:title_id] )
       @text.save
     end
 
@@ -29,7 +29,7 @@ end
 private
 
   #変更後
-  def text_params
+  def multi_text_params
     params.require(:text).permit(:title_id, sentence: [])
   end
 

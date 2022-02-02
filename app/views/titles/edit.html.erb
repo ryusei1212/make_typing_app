@@ -4,5 +4,12 @@
   <%= f.label :title, "タイトル"%>
   <%= f.text_field :title %>
 
-  <%= f.submit "タイトルを編集" %>  
+  <% @title.texts.each do |text| %>
+    <%= f.fields_for "sentence[]", text do |af|%>
+      <p>文章</p>
+      <p><%= af.text_field :sentence %></p>
+    <% end %>
+  <% end %>
+
+  <%= f.submit "編集" %>  
   <% end %>
