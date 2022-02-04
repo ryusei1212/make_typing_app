@@ -10,6 +10,11 @@ require("channels")
 // import .から始めてpathを記述することでjsファイルを読み込む
 
 
+// CSS,bootstrapの読み込み
+import "bootstrap";
+import "../stylesheets/application";
+import "../stylesheets/type";
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
