@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 // import .から始めてpathを記述することでjsファイルを読み込む
