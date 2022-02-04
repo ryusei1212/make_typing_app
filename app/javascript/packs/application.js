@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 // import .から始めてpathを記述することでjsファイルを読み込む
 
+
+// CSS,bootstrapの読み込み
 import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/type";
