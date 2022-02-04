@@ -1,14 +1,41 @@
-<h1 class="main">ホーム画面<h1>
+<div class="row">
+  <div class="col-lg-4 col-sm-6">
+    <div class="card" style="width: 18rem;">
+      <%# <img src="..." class="card-img-top" alt="..."> %>
+      <div class="card-body">
+      <% if logged_in?%>
+        <h5 class="card-title">ノーマルモード</h5>
+        <p class="card-text">おすすめタイピング練習ワード</p>
+        <p><%= link_to 'Go', '#', class: "btn btn-primary" %></p>
+      </div>
+    </div>
 
-<div class="box">
-<% if logged_in?%>
-  <p class="box2"><%= link_to 'ノーマルモード', '#' %></p>
-  <p class="box2"><%= link_to 'フリーモード', titles_path %></p>
-  <p class="box2"><%= link_to '新規作成', new_title_path %></p>
-  <p class="box2"><%= link_to '設定', '#'%>
- <% else%>
-  <p class="box2"><%= link_to 'ノーマルモード', '#' %></p>
-  <p class="box2"><%= link_to '設定', '#'%>
- <% end%>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">フリーモード</h5>
+        <p class="card-text">あなただけの文章を</p>
+        <p><%= link_to '一覧', titles_path, class: "btn btn-primary" %></p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+      <h5 class="card-title">新規作成</h5>
+        <p class="card-text">テキストは半角英数字のみとなります</p>
+        <p><%= link_to '新規作成', new_title_path, class: "btn btn-primary" %></p>
+      </div> 
+    </div>
+
+    <% else%>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">ノーマルモード</h5>
+        <p class="card-text">おすすめタイピング練習ワード</p>
+        <p><%= link_to 'Go', '#', class: "btn btn-primary" %></p>
+      </div>
+    </div>
+  <% end%>
+  </div>
 </div>
 
