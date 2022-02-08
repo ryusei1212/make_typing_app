@@ -20,7 +20,6 @@ class TextsController < ApplicationController
       flash[:success] = "テキストの保存に成功"
       redirect_to titles_path
     else
-      flash.now[:danger] = "テキストを入力してください"
       render 'new'
     end
   end
