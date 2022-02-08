@@ -13,7 +13,7 @@ require("channels")
 // CSS,bootstrapの読み込み
 import "bootstrap";
 import "../stylesheets/application";
-// import "../stylesheets/type";
+import "../stylesheets/type";
 
 
 
