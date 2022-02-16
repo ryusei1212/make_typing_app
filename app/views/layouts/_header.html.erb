@@ -9,11 +9,11 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              ロゴ
+              アカウント
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
              <% if logged_in?%>
-             <li><%= link_to "アカウント", login_path, class: "dropdown-item"  %></li>
+             <li><%= link_to "アカウント", user_path(current_user), class: "dropdown-item"  %></li>
              <li><hr class="dropdown-divider"></li>
               <li><%= link_to "サインアウト", logout_path, method: :delete, class: "dropdown-item" %></li>
              <% else%>

@@ -15,7 +15,7 @@ class TitlesController < ApplicationController
     @title.user_id = current_user.id
     if @title.save
       flash[:success] = "タイトルの保存に成功しました、続けてテキストを作成してください"
-       redirect_to new_text_path(title_id: @title.id)
+       redirect_to new_text_path(title_id: @title)      
     else
       render 'new'
     end
