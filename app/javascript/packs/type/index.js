@@ -41,6 +41,5 @@ function next() {
   updateTextField();
 }
 
-document.removeEventListener('keydown', eventListener);
 document.addEventListener('keydown', eventListener);
 next();

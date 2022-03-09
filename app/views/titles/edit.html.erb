@@ -1,16 +1,19 @@
 <h1>編集画面</h1>
 <%= link_to '戻る', titles_path %>
-<%= form_with(model: @title, local: true) do |f|%>
-  <%= render 'shared/error_messages', model: f.object %>
-  <%= f.label :title, "タイトル"%>
-  <%= f.text_field :title %>
+<div class="row">
+  <div class="col-6">
+    <%= form_with(model: @title, local: true) do |f|%>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%= f.label :title, "タイトル"%>
+      <p><%= f.text_field :title, class: 'form-control form-control-lg' %></p>
 
-  <% @title.texts.each do |text| %>
-    <%= f.fields_for "sentence[]", text do |af|%>
-      <p>文章</p>
-      <p><%= af.text_field :sentence %></p>
+    <% @title.texts.each do |text| %>
+      <%= f.fields_for "sentence[]", text do |af|%>
+        <%= af.text_field :sentence, class: 'form-control', placeholder: 'テキスト' %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <%= f.submit "編集" %>  
-  <% end %>
+    <%= f.submit "編集" %>  
+    <% end %>
+  </div>
+</div>
