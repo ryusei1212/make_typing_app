@@ -5,6 +5,7 @@ $cBlack: black;
 .card-title {
   color: $cBlack;
   font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -18,17 +19,5 @@ $cBlack: black;
   input {
     border-color: red;
   }
-  label {
-    color: red;
-  }
 }
 
-// フォームのスタイル
-
-.form-control {
-  margin-bottom: 5px;
-}
-
-label {
-  font-size: 1.25rem;
-}

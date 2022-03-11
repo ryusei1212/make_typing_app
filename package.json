@@ -2,6 +2,7 @@
   "name": "typed_app",
   "private": true,
   "dependencies": {
+    "@nathanvda/cocoon": "^1.2.14",
     "@popperjs/core": "^2.11.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -17,6 +18,6 @@
     "webpack-dev-server": "^4.2.1"
   },
   "engines": {
-    "node": "14.0"
+    "node": "12.18.4"
   }
 }

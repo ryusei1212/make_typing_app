@@ -8,28 +8,17 @@ class TitlesController < ApplicationController
 
   def new
     @title = Title.new
+    @title.texts.build
   end
 
   def create
     @title = Title.new(title_params)
-    @title.user_id = current_user.id
-    @text = Text.new(text_params)
 
-    if @title.valid?
-      ActiveRecord::Base.transaction do
-        @title.save!
-        @text.title_id = @title.id
-        text_params[:sentence].each do |sentence|
-          @text = Text.new(sentence: sentence, 
-                           title_id: @title.id )
-          @text.valid?
-          @text.save!
-        end
+    if @title.save
         flash[:success] = "#{@title.title}を作成しました"
-      end
-      redirect_to titles_path
+        redirect_to titles_path
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -39,11 +28,10 @@ class TitlesController < ApplicationController
 
   def update
     @title = Title.find(params[:id])
-    if ActiveRecord::Base.transaction do
-      @title.update!(title_params)
-      Text.multi_update(text_update_params)
-    end
+    
+    if @title.update(title_params)
       redirect_to titles_path
+      flash[:success] = "#{@title.title}を更新しました"
     else
       render 'edit'
     end
@@ -58,15 +46,5 @@ end
 private
 
   def title_params
-    params.require(:title).permit(:title)
+    params.require(:title).permit(:title, texts_attributes: [:id, :sentence, :_destroy]).merge(user_id: current_user.id)
   end
-
-  def text_params
-    params.require(:text).permit(:title_id, sentence: [])
-  end
-
-  # 複数テキストの更新用メソッド
-  def text_update_params
-    params.require(:title).permit(sentence: :sentence)[:sentence]
-  end
-

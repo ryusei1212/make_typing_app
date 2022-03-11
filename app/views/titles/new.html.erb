@@ -1,20 +1,11 @@
 <h1>新規作成画面</h1>
-<button id="addForm" class="btn btn-primary">テキスト追加</button>
-<%= link_to 'キャンセル', root_path, class: 'btn btn-secondary' %>
-  <div class="row">
-    <div class="col-6">
-      <%= form_with(model: @title, local: true, id: "parent") do |f|%>
-        <%= render 'shared/error_messages', model: f.object%>
-        <%= f.label :title, "タイトル"%>
-        <%= f.text_field :title, class: 'form-control form-control-lg' %>
-        
-        <%= f.fields_for :sentence do |sf| %>
-        <%= sf.label :sentence, "テキスト" %>
-        <%= sf.text_field :sentence, name:"text[sentence][]", class: 'form-control', placeholder: 'テキスト' %>
-        <% end %>
+<div class="row mb-3">
+  <div class="col-6">
+  <%= render 'shared/error_messages', model: @title%>
 
-        <%= f.submit "作成", id: 'submit', class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
-  <%= javascript_pack_tag 'text_add/text' %>
+    <%= form_with(model: @title, local: true) do |f|%> 
+      <%= render 'form', f: f %>
+       <%= f.submit "新規作成", id: 'submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
