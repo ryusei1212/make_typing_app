@@ -1,3 +1,4 @@
+# config/locales以下にあるすべての.rbファイルと.ymlファイルは、自動的に訳文読み込みパスに追加される。
 ja:
  activerecord:
   attributes:
@@ -7,8 +8,7 @@ ja:
     password: パスワード
     password_confirmation: パスワード確認
 
+# textsは親モデルであるtitleモデルの関連づけで定義したもの => has_many :texts
    title:
     title: タイトル
-
-   text:
-    sentence: 文章
+    texts: テキスト

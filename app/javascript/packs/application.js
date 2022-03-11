@@ -9,6 +9,10 @@ require("@rails/activestorage").start()
 require("channels")
 // import .から始めてpathを記述することでjsファイルを読み込む
 
+// cocoonのjsライブラリとjQueryをRails側に認識させる
+require("jquery")
+require("@nathanvda/cocoon")
+
 
 // CSS,bootstrapの読み込み
 import "bootstrap";

@@ -1,5 +1,23 @@
 @import "bootstrap";
+// メイン画面のスタイル
+$cBlack: black;
 
+.card-title {
+  color: $cBlack;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
 
+.card {
+  &:hover {
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+}
 
+// バリデーションに引っかかた際のスタイル
+.field_with_errors {
+  input {
+    border-color: red;
+  }
+}
 
