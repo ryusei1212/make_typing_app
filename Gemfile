@@ -62,3 +62,5 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails' 
 
 gem 'rails-i18n'
+
+gem 'cocoon'
