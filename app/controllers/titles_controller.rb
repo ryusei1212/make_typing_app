@@ -3,7 +3,7 @@ class TitlesController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update]
 
   def index
-    @title = Title.all
+    @title = current_user.titles
   end
 
   def new
