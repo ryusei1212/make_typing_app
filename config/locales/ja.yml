@@ -6,7 +6,7 @@ ja:
     name: 名前
     email: メールアドレス
     password: パスワード
-    password_confirmation: パスワード確認
+    password_confirmation: パスワード (確認用)
 
 # textsは親モデルであるtitleモデルの関連づけで定義したもの => has_many :texts
    title:

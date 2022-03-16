@@ -3,7 +3,7 @@ class TitlesController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update]
 
   def index
-    @title = current_user.titles
+    @title = current_user.titles.includes(:texts)
   end
 
   def new
@@ -23,11 +23,11 @@ class TitlesController < ApplicationController
   end
 
   def edit
-    @title = Title.includes(:texts).find(params[:id])
+    @title = current_user.titles.includes(:texts).find(params[:id])
   end
 
   def update
-    @title = Title.find(params[:id])
+    @title = current_user.titles.includes(:texts).find(params[:id])
     
     if @title.update(title_params)
       redirect_to titles_path

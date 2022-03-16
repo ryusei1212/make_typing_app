@@ -1,14 +1,10 @@
-<h1>パスワードを忘れましたか？</h1>
-
-<div class="row">
-  <div class="col-md-6">
+  <div class="text-center">
     <%=
     form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email, class: "form-control"%>
+    <p>パスワードを忘れましたか？</p>
 
-    <%= f.submit "パスワードの再設定方法を送信する", class: "btn btn-primary"%>
+    <%= f.email_field :email, class: "form-control text-field", placeholder: "Eメールアドレス"%>
+
+    <%= f.submit "パスワードの再設定方法を送信する", class: "btn btn-lg btn-primary"%>
     <% end %>
   </div>
-</div>
-
