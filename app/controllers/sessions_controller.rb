@@ -10,10 +10,8 @@ class SessionsController < ApplicationController
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_back_or root_path
       else
-        message  = "アカウントが認証されていません "
-        message += "アクティベーションリンクについては、メールを確認してください。"
-        flash[:warning] = message
-        redirect_to root_url
+        flash[:warning] = "メールアドレスの本人確認が必要です"
+        redirect_to login_path
       end
     else
       flash.now[:danger] = 'メールアドレスとパスワードの組み合わせが正しくありません'
