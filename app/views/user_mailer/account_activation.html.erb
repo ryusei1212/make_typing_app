@@ -1,10 +1,10 @@
 <h1>Make-typing App</h1>
 
-<p>Hi <%= @user.name %>,</p>
+<p><%= @user.email %>様</p>
 
 <p>
-Welcome to the Sample App! Click on the link below to activate your account:
+以下のリンクをクリックし、メールアドレスの確認手続きを完了させてください。
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
-                                                    email: @user.email) %>
+<%= link_to edit_account_activation_url(@user.activation_token),
+            edit_account_activation_url(@user.activation_token, email: @user.email) %>
