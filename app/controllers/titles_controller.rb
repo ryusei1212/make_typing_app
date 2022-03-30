@@ -2,6 +2,10 @@ class TitlesController < ApplicationController
   # logged_in_userメソッドはsession_helper内に記載
   before_action :logged_in_user, only: [:index, :edit, :update]
 
+  def nomal
+    @title = Title.where(user_id: 1)
+  end
+
   def index
     @title = current_user.titles.includes(:texts)
   end
@@ -28,7 +32,6 @@ class TitlesController < ApplicationController
 
   def update
     @title = current_user.titles.includes(:texts).find(params[:id])
-    
     if @title.update(title_params)
       redirect_to titles_path
       flash[:success] = "#{@title.title}を更新しました"
