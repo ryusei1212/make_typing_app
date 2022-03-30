@@ -1,0 +1,9 @@
+<div class="row">
+<% @title.each do |title|%>
+  <div class="col-6 mb-5">
+    <%= link_to title.title, types_path(title_id: title.id), controller: 'types', action: 'index' %>
+  </div>
+<% end %>
+</div>
+
+
