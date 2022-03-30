@@ -1,12 +1,18 @@
 <h1>編集画面</h1>
-<div class="row">
-  <div class="col-6">
-    <%= render 'shared/error_messages', model: @title%>
-
+  <div class="row">
+    <div class="col-8">
+      <%= render 'shared/error_messages', model: @title%>
       <%= form_with(model: @title, local: true) do |f|%> 
+        <%= link_to_add_association "テキスト追加", f, :texts,
+          data: {
+            association_insertion_node: '#detail-association-insertion-point',
+            association_insertion_method: 'after'
+          }, class: 'btn btn-primary'     
+        %>
+      <%= link_to 'キャンセル', titles_path, class: 'btn btn-secondary' %>
         <%= render 'form', f: f %>
-          <%= f.submit "編集", id: 'submit', class: 'btn btn-primary' %>
+          <%= f.submit "編集", id: 'submit', class: 'btn btn-lg btn-primary' %>
     <% end %>
+    </div>
   </div>
-</div>
 

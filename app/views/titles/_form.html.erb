@@ -1,14 +1,4 @@
-<div class="row">
-    <div class="col-6">
-      <%= link_to_add_association "テキスト追加", f, :texts,
-        data: {
-          association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'after'
-        }, class: 'btn btn-primary'     
-      %>
-      <%= link_to 'キャンセル', titles_path, class: 'btn btn-secondary' %>
-    </div>
-  </div>
+
 
   <div class="mb-3 mt-1">
     <%= f.text_field :title, class: 'form-control form-control-lg', placeholder: 'タイトル' %>

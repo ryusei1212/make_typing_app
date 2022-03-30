@@ -2,7 +2,6 @@
 // メイン画面のスタイル
 $cBlack: black;
 
-
 .card-title {
   color: $cBlack;
   font-weight: bold;
@@ -18,7 +17,8 @@ $cBlack: black;
 // バリデーションに引っかかた際のスタイル
 .field_with_errors {
   input {
-    border-color: red;
+    // border-color: red;
+    @extend .is-invalid;
   }
 }
 
@@ -39,5 +39,3 @@ $cBlack: black;
 .btn {
   border-radius: 34px;
 }
-
-

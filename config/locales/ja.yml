@@ -1,14 +1,17 @@
 # config/locales以下にあるすべての.rbファイルと.ymlファイルは、自動的に訳文読み込みパスに追加される。
 ja:
- activerecord:
-  attributes:
-   user:
-    name: 名前
-    email: メールアドレス
-    password: パスワード
-    password_confirmation: パスワード (確認用)
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード (確認用)
 
-# textsは親モデルであるtitleモデルの関連づけで定義したもの => has_many :texts
-   title:
-    title: タイトル
-    texts: テキスト
+      # textsは親モデルであるtitleモデルの関連づけで定義したもの => has_many :texts
+      title:
+        title: タイトル
+        texts: テキスト
+
+      title/texts:
+        sentence: テキスト

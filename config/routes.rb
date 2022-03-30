@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   post '/login',    to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :titles, except: [:show]
-  
+  resources :titles, except: [:show] do
+    collection do
+      get 'nomal'
+    end
+  end
   
 end
