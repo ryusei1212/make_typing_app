@@ -5,18 +5,25 @@ User.create!(name: 'foo',
             activated: true
           )
 
+User.create!(name: 'bar',
+            email: 'bar@example.com',
+            password: 'barbar',
+            password_confirmation: 'barbar',
+            activated: true
+)
+
 users = User.first
 users.titles.create!(
   title: 'ホームポジション(左手)',
   texts_attributes: [
     {
-      sentence: 'qwert'
+      sentence: 'qwerttrewq'
     },
     {
-      sentence: 'asdfg'
+      sentence: 'asdfggfdsa'
     },
     {
-      sentence: 'zxcv'
+      sentence: 'zxcvvcxz'
     }
   ]
 )
@@ -25,13 +32,13 @@ users.titles.create!(
   title: 'ホームポジション(右手)',
   texts_attributes: [
     {
-      sentence: 'poiuy'
+      sentence: 'poiuyyuiop'
     },
     {
-      sentence: ';lkjh'
+      sentence: 'hjkl;;lkjh'
     },
     {
-      sentence: '/.,mnb'
+      sentence: '/.,mnbn,./'
     }
   ]
 )
