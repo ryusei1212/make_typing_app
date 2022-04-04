@@ -13,8 +13,8 @@
         <%= f.password_field :password_confirmation, class: 'form-control text-field',placeholder: "パスワード (確認用)" %>
 
       <%= f.submit "アカウント登録", class: "btn btn-lg btn-primary form-control"%>
-      </div>
+      <% end%>
+      <%= link_to 'Googleでログイン', "/auth/google_oauth2", method: :post %>
+    </div>
   </div>
-
-<% end%>
 

@@ -1,5 +1,10 @@
 <%= form_with(model: @user, local: true, class: 'mt-5') do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <%= f.text_field :name, class: 'form-control text-field',placeholder: "名前"%>
+
+  <%= f.password_field :password, class: 'form-control text-field',placeholder: "パスワード" %>
+
+  <%= f.password_field :password_confirmation, class: 'form-control text-field',placeholder: "パスワード (確認用)" %>
+  
   <%= f.submit '更新する', class: "btn btn-lg btn-primary form-control"%>
 <% end %>
