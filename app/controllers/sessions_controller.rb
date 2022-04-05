@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
   def create_google
     if(user = User.find_or_create_auth_hash(auth_hash))
       user.activate
+      flash[:success] = 'ログイン'
       log_in user
     end
     redirect_to root_path
