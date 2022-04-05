@@ -22,7 +22,10 @@ body {
 
 // バリデーションに引っかかた際のスタイル
 .field_with_errors {
-  input {
+  input{
+    @extend .is-invalid;
+  }
+  textarea{
     @extend .is-invalid;
   }
 }
@@ -32,7 +35,7 @@ body {
   border-radius: 34px;
   height: 60px;
   padding: 0 40px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .text-center {
@@ -43,6 +46,14 @@ body {
 
 .btn {
   border-radius: 34px;
+}
+
+// お問い合わせメールのスタイル
+.contact_form {
+  input {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 // フッターのスタイル

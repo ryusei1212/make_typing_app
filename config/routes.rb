@@ -19,5 +19,7 @@ Rails.application.routes.draw do
       get 'nomal'
     end
   end
+
+  resource :contacts, only: [:new, :create]
   
 end

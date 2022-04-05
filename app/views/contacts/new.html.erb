@@ -1,0 +1,19 @@
+<div class='contact_form'>
+  <h2 class="text-center mt-2">お問い合わせフォーム</h2>
+  <div class="">
+    <%= form_with(model: @contact, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      
+      <%= f.label :name, '名前' %>
+      <%= f.text_field :name, class: 'form-control', placeholder: '山田 太郎' %>
+
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.email_field :email, class: 'form-control',  placeholder: 'example@email.com' %>
+
+      <%= f.label :message, 'お問い合わせ内容' %>
+      <%= f.text_area :message, size: '5x5', class: 'form-control',  placeholder: 'お問い合わせ内容内容を入力してください' %>
+
+      <%= f.submit '送信', class: 'form-control mt-3 btn-info' %>
+    <% end %>
+  </div>
+</div>
