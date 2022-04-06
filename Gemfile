@@ -57,13 +57,19 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
+# bootstrapの導入
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails' 
 
+# 国際化対応
 gem 'rails-i18n'
 
+# 追加、削除ボタン
 gem 'cocoon'
 
+# googleアカウント認証
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+
+# ページネーション
+gem 'kaminari'
