@@ -57,11 +57,16 @@ body {
 }
 
 // フッターのスタイル
-
 .footer-link {
   list-style: none;
 }
 
+// ページネーション
 .pagination {
   justify-content: center;
+}
+
+// タイプ画面
+#cahracters{
+  overflow-wrap: break-word;
 }

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'home_screen#home'
+  get '/terms',   to: 'home_screen#terms'
+  get '/privacy', to: 'home_screen#privacy'
 
   get '/types', to: 'types#index'
 
