@@ -7,7 +7,7 @@ class TitlesController < ApplicationController
   end
 
   def index
-    @title = current_user.titles.page(params[:page]).includes(:texts).per(18)
+    @title = current_user.titles.page(params[:page]).includes(:texts).per(12)
   end
 
   def new
