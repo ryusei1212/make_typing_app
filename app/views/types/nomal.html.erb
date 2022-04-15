@@ -1,19 +1,16 @@
 <div>
-  <%# 問題文を表示するview %>
   <div id="cahracters">
     <span id="typed"></span><span id="untyped"></span>
   </div>
 
-  <%# 隠しinput要素のvalue値に問題文をセット %>
   <input name="text_json" type="hidden" value='<%= @text_json %>' id='text_json'>
 
-  <%# タイピング結果を表示する為のview %>
   <div class="result-screen text-center mb-5">
     
   </div>
 
   <div class="free-mode-link row " style="display:none">
-    <%= link_to '続けてプレイ', titles_path, class: 'col-6 btn btn-lg btn-primary mb-3'%>
+    <%= link_to '続けてプレイ', nomal_titles_path, class: 'col-6 btn btn-lg btn-primary mb-3'%>
     <%= link_to 'ホーム', root_path, class: 'col-6 btn btn-lg btn-outline-primary' %>
   </div>
 </div>

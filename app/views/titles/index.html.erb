@@ -1,15 +1,13 @@
 <%= link_to '+新規作成', new_title_path, class: 'btn btn-primary mt-2' %>
-<table class="table table-sm">
+<table class="table table-sm mt-2">
   <% @title.each do |title|%>
-    <%# <tbody class="mb-2"> %>
     <tr>
-      <td><%= link_to title.title, types_path(title_id: title.id), controller: 'types', action: 'index' %></td>
+      <td><%= link_to title.title, types_path(title_id: title.id) %></td>
       <td>
         <%= link_to '編集', edit_title_path(title.id), class: 'btn btn-primary' %>
         <%= link_to '削除', title_path(title.id), method: :delete, data:{confirm: "「#{title.title}」を削除しますか？"}, class: 'btn btn-secondary' %>
       </td>
     </tr>
-    <%# </tbody> %>
   <% end %>
 <table>
 

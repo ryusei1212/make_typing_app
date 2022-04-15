@@ -1,21 +1,35 @@
 const typedField = document.getElementById('typed');
 const untypedField = document.getElementById('untyped');
+const resultScreen = document.querySelector('.result-screen');
+const freeModeLink = document.querySelector('.free-mode-link');
 
 const input = document.querySelector('input');
 const value = input.getAttribute('value');
 const jsonValue = JSON.parse(value);
 
-// 問題文
-const strs = jsonValue;
 
- function eventListener (e) {
-  if (e.key !== untyped.substring(0, 1)) { return; }
+// 問題文
+let strs = jsonValue;
+
+let missTypeCount = 0;
+let successTypeCount = 0;
+
+ function keyDownEventStart (e) {
+  if(strs.length === 0){ return ;}
+
+  if (e.key !== untyped.substring(0, 1)){
+    missTypeCount += 1;
+    return; 
+  }
+
+  successTypeCount += 1;
   typed += untyped.substring(0, 1);
   untyped = untyped.substring(1);
 
   updateTextField();
 
   if (untyped === '') {
+    deleteString();
     next();
   }
 };
@@ -36,10 +50,28 @@ function updateTextField() {
 }
 
 function next() {
+  if(strs.length === 0){
+    resultScreen.textContent = `入力文字数 ${successTypeCount } ミスタイプ数 ${missTypeCount}`;
+    styleOpen();
+  }
+
   typed = '';
   untyped = nextString();
   updateTextField();
 }
 
-document.addEventListener('keydown', eventListener);
+// タイトル一覧へのリンクを表示
+function styleOpen() {
+  freeModeLink.style.display = "block";
+}
+
+document.addEventListener('keydown', keyDownEventStart);
+
+function deleteString() {
+  const filterItem = strs.filter(function(typedString) {
+    return typedString !== typed;
+  })
+  strs = filterItem;
+}
+
 next();

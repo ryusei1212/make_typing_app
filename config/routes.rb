@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/privacy', to: 'home_screen#privacy'
 
   get '/types', to: 'types#index'
+  get '/nomal_types', to: 'types#nomal'
 
   resources :users
 
