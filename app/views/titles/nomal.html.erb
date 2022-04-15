@@ -1,7 +1,7 @@
 <div class="row mt-5">
 <% @title.each do |title|%>
   <div class="col-6 mb-5">
-    <%= link_to title.title, types_path(title_id: title.id), controller: 'types', action: 'index' %>
+    <%= link_to title.title, nomal_types_path(title_id: title.id)%>
   </div>
 <% end %>
 </div>

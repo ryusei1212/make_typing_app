@@ -9,7 +9,7 @@ $cBlack: black;
 }
 
 .card {
-  margin-top: 3rem;
+  margin-top: 4rem;
   &:hover {
     box-shadow: 15px 10px 10px 0px rgba(0, 0, 0, 0.5);
   }
@@ -17,7 +17,15 @@ $cBlack: black;
 
 body {
   background-image: url(../images/images.jpeg);
+  padding-bottom: 60px;
   // background-size: cover;
+}
+
+// タイトル一覧画面のスタイル
+.table {
+  a {
+    list-style: none;
+  }
 }
 
 // バリデーションに引っかかた際のスタイル
@@ -69,4 +77,28 @@ body {
 // タイプ画面
 #cahracters{
   overflow-wrap: break-word;
+}
+
+// タイプリザルト画面
+.result-screen{
+  font-size: 2rem;
+}
+
+.free-mode-link {
+  font-size: 2rem;
+  // width: 50%;
+  text-align: center;
+
+  /* アニメーション */
+  animation: fadeIn 3s linear;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
 }
