@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 2022_04_05_053554) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "inquiries", force: :cascade do |t|
-    t.string "name"
-    t.text "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "texts", force: :cascade do |t|
     t.string "sentence"
     t.integer "title_id"

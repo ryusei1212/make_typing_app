@@ -46,6 +46,11 @@ body {
   margin-bottom: 30px;
 }
 
+.login-form {
+  width: 400px;
+  margin: 5% auto;
+}
+
 .text-center {
   p {
     font-size: 1.5rem;
@@ -54,6 +59,10 @@ body {
 
 .btn {
   border-radius: 34px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
 }
 
 // お問い合わせメールのスタイル
@@ -74,7 +83,7 @@ body {
   justify-content: center;
 }
 
-// タイプ画面
+// タイプ画面(文字数が長い時に改行する)
 #cahracters{
   overflow-wrap: break-word;
 }
