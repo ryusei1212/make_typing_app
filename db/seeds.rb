@@ -92,19 +92,43 @@ users.titles.create!(
   title: '五十音',
   texts_attributes: [
     {
-      sentence: 'aiueo kakikukeko'
+      sentence: 'aiueo'
     },
     {
-      sentence: 'sasisuseso tatituteto'
+      sentence: 'kakikukeko'
     },
     {
-      sentence: 'naninuneno hahihuheho'
+      sentence: 'sasisuseso'
     },
     {
-      sentence: 'mamimumemo yayuyo'
+      sentence: 'tatituteto'
     },
     {
-      sentence: 'rarirurero waon'
+      sentence: 'naninuneno'
+    },
+    {
+      sentence: 'hahihuheho'
+    },
+    {
+      sentence: 'mamimumemo'
+    },
+    {
+      sentence: 'yayuyo'
+    },
+    {
+      sentence: 'rarirurero'
+    },
+    {
+      sentence: 'waon'
+    }
+  ]
+)
+
+users.titles.create!(
+  title: '鬼連打',
+  texts_attributes: [
+    {
+      sentence: 'aiueo'*50
     }
   ]
 )

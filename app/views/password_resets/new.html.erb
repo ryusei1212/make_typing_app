@@ -1,10 +1,10 @@
-  <div class="text-center">
+  <div class="text-center login-form">
     <%=
     form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
     <p>パスワードを忘れましたか？</p>
 
     <%= f.email_field :email, class: "form-control text-field", placeholder: "Eメールアドレス"%>
 
-    <%= f.submit "パスワードの再設定方法を送信する", class: "btn btn-lg btn-primary"%>
+    <%= f.submit "パスワードの再設定方法を送信する", class: "form-control btn btn-primary"%>
     <% end %>
   </div>
