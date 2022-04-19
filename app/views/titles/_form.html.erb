@@ -1,12 +1,10 @@
+<div class="mb-3 mt-1">
+  <%= f.text_field :title, class: 'form-control form-control-lg', placeholder: 'タイトル' %>
+</div>
 
-
-  <div class="mb-3 mt-1">
-    <%= f.text_field :title, class: 'form-control form-control-lg', placeholder: 'タイトル' %>
-  </div>
-
-  <div id="detail-association-insertion-point">
-    <%= f.fields_for :texts do |sentence_field| %>
-      <%= render "text_fields", f: sentence_field%>
-    <% end %>
-  </div>
+<div id="detail-association-insertion-point">
+  <%= f.fields_for :texts do |sentence_field| %>
+    <%= render "text_fields", f: sentence_field%>
+  <% end %>
+</div>
 
