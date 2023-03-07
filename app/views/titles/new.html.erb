@@ -1,17 +1,14 @@
-<h1>新規作成画面</h1>
-  <div class="row">
-    <div class="col-8">
-      <%= render 'shared/error_messages', model: @title%>
-      <%= form_with(model: @title, local: true) do |f|%> 
-        <%= link_to_add_association "テキスト追加", f, :texts,
-          data: {
-            association_insertion_node: '#detail-association-insertion-point',
-            association_insertion_method: 'after'
-          }, class: 'btn btn-primary'     
-        %>
-      <%= link_to 'キャンセル', root_path, class: 'btn btn-secondary' %>
-        <%= render 'form', f: f %>
-          <%= f.submit "作成", id: 'submit', class: 'btn btn-lg btn-primary mb-3' %>
-    <% end %>
-    </div>
-  </div>
+<div class='w-50 mx-auto mt-5'>
+  <%= render 'shared/error_messages', model: @title%>
+
+  <%= form_with(model: @title, local: true) do |f|%>
+    <%= link_to_add_association "テキスト追加", f, :texts, data: {
+    association_insertion_node: '#detail-association-insertion-point',
+    association_insertion_method: 'after'
+    }, class: 'btn btn-primary mb-3'
+    %>
+    <%= link_to 'キャンセル', root_path, class: 'btn btn-secondary mb-3' %>
+    <%= render 'form', f: f %>
+    <%= f.submit "作成", id: 'submit', class: 'btn btn-lg btn-primary mb-3' %>
+  <% end %>
+</div>

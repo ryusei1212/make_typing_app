@@ -11,7 +11,7 @@ class TextsController < ApplicationController
 
   def create
     multi_text_params[:sentence].each do |sentence|
-      @text = Text.new(sentence: sentence, 
+      @text = Text.new(sentence: sentence,
                        title_id: multi_text_params[:title_id] )
       @text.save
     end
