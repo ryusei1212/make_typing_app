@@ -3,11 +3,9 @@
     <span id="typed"></span><span id="untyped"></span>
   </div>
 
-  <input name="text_json" type="hidden" value='<%= @text_json %>' id='text_json'>
+  <input name="text" type="hidden" value='<%= @text %>'>
 
-  <div class="result-screen text-center mb-5">
-    
-  </div>
+  <div class="result-screen text-center mb-5"></div>
 
   <div class="free-mode-link row " style="display:none">
     <%= link_to '続けてプレイ', nomal_titles_path, class: 'col-6 btn btn-lg btn-primary mb-3'%>

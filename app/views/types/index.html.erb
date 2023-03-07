@@ -5,12 +5,10 @@
   </div>
 
   <%# 隠しinput要素のvalue値に問題文をセット %>
-  <input name="text_json" type="hidden" value='<%= @text_json %>' id='text_json'>
+  <input name="text" type="hidden" value='<%= @text %>'>
 
   <%# タイピング結果を表示する為のview %>
-  <div class="result-screen text-center mb-5">
-    
-  </div>
+  <div class="result-screen text-center mb-5"></div>
 
   <div class="free-mode-link row " style="display:none">
     <%= link_to '続けてプレイ', titles_path, class: 'col-6 btn btn-lg btn-primary mb-3'%>
