@@ -5,11 +5,9 @@ const freeModeLink = document.querySelector('.free-mode-link');
 
 const input = document.querySelector('input');
 const value = input.getAttribute('value');
-const jsonValue = JSON.parse(value);
-
 
 // 問題文
-let strs = jsonValue;
+let strs = value;
 
 let missTypeCount = 0;
 let successTypeCount = 0;
@@ -19,7 +17,7 @@ let successTypeCount = 0;
 
   if (e.key !== untyped.substring(0, 1)){
     missTypeCount += 1;
-    return; 
+    return;
   }
 
   successTypeCount += 1;
@@ -29,7 +27,6 @@ let successTypeCount = 0;
   updateTextField();
 
   if (untyped === '') {
-    deleteString();
     next();
   }
 };
@@ -66,12 +63,5 @@ function styleOpen() {
 }
 
 document.addEventListener('keydown', keyDownEventStart);
-
-function deleteString() {
-  const filterItem = strs.filter(function(typedString) {
-    return typedString !== typed;
-  })
-  strs = filterItem;
-}
 
 next();
