@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/terms',   to: 'home_screen#terms'
   get '/privacy', to: 'home_screen#privacy'
 
-  get '/types', to: 'types#index'
+  get '/types', to: 'types#free'
   get '/nomal_types', to: 'types#nomal'
 
   resources :users
@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   end
 
   resource :contacts, only: [:new, :create]
-  
+
 end

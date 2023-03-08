@@ -1,5 +1,5 @@
 class TypesController < ApplicationController
-  def index
+  def free
     @text = Text.where(title_id: params[:title_id]).pluck(:sentence)
   end
 
