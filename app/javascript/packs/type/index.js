@@ -5,9 +5,10 @@ const freeModeLink = document.querySelector('.free-mode-link');
 
 const input = document.querySelector('input');
 const value = input.getAttribute('value');
+const texts = JSON.parse(value);
 
 // 問題文
-let strs = value;
+let strs = texts;
 
 let missTypeCount = 0;
 let successTypeCount = 0;
@@ -63,5 +64,12 @@ function styleOpen() {
 }
 
 document.addEventListener('keydown', keyDownEventStart);
+
+function deleteString() {
+  const filterItem = strs.filter(function(typedString) {
+    return typedString !== typed;
+  })
+  strs = filterItem;
+}
 
 next();
