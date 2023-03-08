@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/login',     to: 'sessions#new'
   post '/login',    to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  # グーグルアカウント認証用
-  get 'auth/:provider/callback', to: 'sessions#create_google'
 
   resources :titles, except: [:show] do
     collection do

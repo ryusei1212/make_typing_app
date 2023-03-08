@@ -19,22 +19,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def create_google
-    if(user = User.find_or_create_auth_hash(auth_hash))
-      user.activate
-      flash[:success] = 'Googleアカウントでログインしました'
-      log_in user
-    end
-    redirect_to root_path
-  end
-
   def destroy
     log_out if logged_in?
     redirect_to root_url
   end
-
-  private
-    def auth_hash
-      request.env['omniauth.auth']
-    end
 end

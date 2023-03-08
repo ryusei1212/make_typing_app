@@ -2,20 +2,17 @@
   <p class="font-weight-bold">アカウント登録</p>
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
-      
+
         <%= f.text_field :name, class: 'form-control text-field col-6',placeholder: "名前" %>
-      
+
         <%= f.email_field :email, class: 'form-control text-field',placeholder: "Eメールアドレス" %>
-    
+
         <%= f.password_field :password, class: 'form-control text-field',placeholder: "パスワード" %>
 
-        <%= f.password_field :password_confirmation, class: 
+        <%= f.password_field :password_confirmation, class:
         'form-control text-field',placeholder: "パスワード (確認用)" %>
 
         <%= f.submit "アカウント登録", class: 'form-control btn btn-lg btn-primary'%>
 
     <% end%>
-  <p class="mt-4"><%= link_to image_pack_tag("media/images/btn_google_signin_dark_pressed_web@2x-a8425d4e06e68b1c5486eb12ffc5b0925b82870db371211cab4b950bcecc7bfa.png", size: '200x50'), "/auth/google_oauth2", method: :post %>
-  </p>
 </div>
-

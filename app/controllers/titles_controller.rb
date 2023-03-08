@@ -12,7 +12,6 @@ class TitlesController < ApplicationController
 
   def new
     @title = Title.new
-    @title.texts.build
   end
 
   def create
