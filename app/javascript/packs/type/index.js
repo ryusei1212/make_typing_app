@@ -28,6 +28,7 @@ let successTypeCount = 0;
   updateTextField();
 
   if (untyped === '') {
+    deleteString();
     next();
   }
 };
