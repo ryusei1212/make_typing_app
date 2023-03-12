@@ -36,7 +36,3 @@ group :test do
   gem 'webdrivers'
   gem 'rexml'
 end
-
-group :production do
-  gem 'pg'
-end
