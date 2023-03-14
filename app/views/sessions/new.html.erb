@@ -13,6 +13,8 @@
 
       <%= f.submit "ログイン", class: 'btn btn-lg btn-primary form-control mt-2' %>
     <% end %>
+      <%= button_to "ゲストログイン", guest_login_path, class: 'btn btn-lg btn-warning form-control mt-2' %>
+
 </div>
 <div class="row text-center">
     <p><%= link_to "アカウント作成", new_user_path %></p>
